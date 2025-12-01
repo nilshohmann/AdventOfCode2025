@@ -13,19 +13,6 @@ require_relative "riddles/day09/day09"
 require_relative "riddles/day10/day10"
 require_relative "riddles/day11/day11"
 require_relative "riddles/day12/day12"
-require_relative "riddles/day13/day13"
-require_relative "riddles/day14/day14"
-require_relative "riddles/day15/day15"
-require_relative "riddles/day16/day16"
-require_relative "riddles/day17/day17"
-require_relative "riddles/day18/day18"
-require_relative "riddles/day19/day19"
-require_relative "riddles/day20/day20"
-require_relative "riddles/day21/day21"
-require_relative "riddles/day22/day22"
-require_relative "riddles/day23/day23"
-require_relative "riddles/day24/day24"
-require_relative "riddles/day25/day25"
 
 riddles = [
     Day01,
@@ -39,25 +26,12 @@ riddles = [
     Day09,
     Day10,
     Day11,
-    Day12,
-    Day13,
-    Day14,
-    Day15,
-    Day16,
-    Day17,
-    Day18,
-    Day19,
-    Day20,
-    Day21,
-    Day22,
-    Day23,
-    Day24,
-    Day25
+    Day12
 ]
 
 day = ARGV.length >= 1 ? ARGV[0].to_i : 0
 while day < 1 || day > riddles.length
-    s = Readline.readline("Which day do you want to solve [1-25]? ", true)
+    s = Readline.readline("Which day do you want to solve [1-12]? ", true)
     day = s.to_i
 end
 
