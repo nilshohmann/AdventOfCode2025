@@ -7,7 +7,7 @@ class Day01 < Riddle
 
     private
         def validateFirst
-            return expect(calculateFirst("input_test.txt"), 1)
+            return expect(calculateFirst("input_test.txt"), 3)
         end
 
         def solveFirst
@@ -15,7 +15,7 @@ class Day01 < Riddle
         end
 
         def validateSecond
-            return expect(calculateSecond("input_test.txt"), 2)
+            return expect(calculateSecond("input_test.txt"), 6)
         end
 
         def solveSecond
@@ -23,10 +23,31 @@ class Day01 < Riddle
         end
 
         def calculateFirst(filename)
-            return 0
+            result = 0
+
+            dial = 50
+            readInputFile(filename).lines.each do |line|
+                dial = (dial + (line[0] == 'R' ? 1 : -1) * line[1,line.length].to_i) % 100
+                result += 1 if dial == 0
+            end
+
+            return result
         end
 
         def calculateSecond(filename)
-            return 0
+            result = 0
+
+            dial = 50
+            readInputFile(filename).lines.each do |line|
+                offset = (line[0] == 'R' ? 1 : -1)
+                amount = line[1,line.length].to_i
+                result += amount / 100 # count full rotations
+                (amount % 100).times do # apply the rest
+                    dial = (dial + offset) % 100
+                    result += 1 if dial == 0
+                end
+            end
+
+            return result
         end
 end
