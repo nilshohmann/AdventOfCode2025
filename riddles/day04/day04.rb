@@ -11,7 +11,7 @@ class Day04 < Riddle
         end
 
         def solveFirst
-            calculateFirst "input.txt"
+            calculateFirst("input.txt")
         end
 
         def validateSecond
@@ -19,7 +19,7 @@ class Day04 < Riddle
         end
 
         def solveSecond
-            calculateSecond "input.txt"
+            calculateSecond("input.txt")
         end
 
         def calculateFirst(filename)
