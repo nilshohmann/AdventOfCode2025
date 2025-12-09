@@ -65,9 +65,9 @@ class Riddle
 
         def formatDuration(duration)
             if duration < 1
-                return "#{(duration * 1000 * 100).round / 100}ms"
+                return "#{(duration * 1000 * 100).round / 100.0}ms"
             else
-                return "#{(duration * 100).round / 100}s"
+                return "#{(duration * 100).round / 100.0}s"
             end
         end
 end
