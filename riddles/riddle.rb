@@ -20,6 +20,8 @@ class Riddle
 		puts "| --- | --- | --- |"
         puts "| 1 | #{r1.result} | #{formatDuration r1.elapsed} |"
         puts "| 2 | #{r2.result} | #{formatDuration r2.elapsed} |"
+    rescue Interrupt
+        puts "Canceling execution..."
     end
 
     private
