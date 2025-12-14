@@ -19,7 +19,7 @@ class Day10 < Riddle
         end
 
         def validateSecond
-            return false # expect(calculateSecond("input_test.txt"), 33)
+            return expect(calculateSecond("input_test.txt"), 33)
         end
 
         def solveSecond
@@ -70,12 +70,9 @@ class Day10 < Riddle
             result = 0
 
             machines.each_with_index do |m, i|
-                puts "#{i+1}/#{machines.length} #{m}"
                 $best = 99999
 
                 findBest(m.joltages, 0, m.buttons)
-
-                puts "Got #{$best}"
 
                 result += $best
             end
